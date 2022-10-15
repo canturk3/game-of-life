@@ -1,5 +1,5 @@
 # game-of-life
-Basic implementation of game of life in Python with pygame.\
+Basic implementation of game of life in Python with pygame.
 
 -----
 **Rules:**
