@@ -1,6 +1,6 @@
 import pygame
 
-WINDOW_SIZE = [750, 750]  # create a dynamic way of arranging window size right now it is not one to one with grid size
+WINDOW_SIZE = [750, 750]  # TODO create a dynamic way of arranging window size right now it is not one to one with grid size
 
 GRID_SIZE = 30
 
@@ -146,6 +146,4 @@ if __name__ == '__main__':
 
         clock.tick(60)
 
-    # Be IDLE friendly. If you forget this line, the program will 'hang'
-    # on exit.
     pygame.quit()
