@@ -1,7 +1,9 @@
 # game-of-life
 Basic implementation of game of life in Python with pygame
 
-A JavaScript version using HTML Canvas is also provided in `index.html` and `game-of-life.js`. Open `index.html` in a browser to try it out.
+A JavaScript version using HTML Canvas is also provided in `index.html` and `game-of-life.js`.
+Open `index.html` in a browser to try it out.
+Click and drag on the canvas to draw cells, and press **X** to start or stop the simulation.
 
 -----
 **Rules:**

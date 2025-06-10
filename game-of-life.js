@@ -11,6 +11,24 @@ const GREEN = '#00FF00';
 
 let grid = [];
 let simulationInterval = null;
+let isDrawing = false;
+
+function cellFromEvent(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const col = Math.floor(x / (WIDTH + MARGIN));
+    const row = Math.floor(y / (HEIGHT + MARGIN));
+    return { row, col };
+}
+
+function drawAtEvent(e) {
+    const { row, col } = cellFromEvent(e);
+    if (row >= 0 && row < GRID_SIZE && col >= 0 && col < GRID_SIZE) {
+        grid[row][col] = 1;
+        drawCell(row, col, 1);
+    }
+}
 
 function initGrid() {
     grid = [];
@@ -85,15 +103,18 @@ function toggleSimulation() {
 }
 
 canvas.addEventListener('mousedown', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const col = Math.floor(x / (WIDTH + MARGIN));
-    const row = Math.floor(y / (HEIGHT + MARGIN));
-    if (row >= 0 && row < GRID_SIZE && col >= 0 && col < GRID_SIZE) {
-        grid[row][col] = 1;
-        drawCell(row, col, 1);
+    isDrawing = true;
+    drawAtEvent(e);
+});
+
+canvas.addEventListener('mousemove', (e) => {
+    if (isDrawing) {
+        drawAtEvent(e);
     }
+});
+
+window.addEventListener('mouseup', () => {
+    isDrawing = false;
 });
 
 document.addEventListener('keydown', (e) => {

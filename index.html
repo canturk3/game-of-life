@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <title>Game of Life - JavaScript</title>
     <style>
-        canvas { background: #000; display: block; margin: 0 auto; }
+        body {
+            background-color: #282c34;
+            color: #f8f8f2;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        canvas {
+            background: #000;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #555;
+        }
+
+        #instructions {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
+    <h1>Game of Life</h1>
+    <div id="instructions">
+        Click and drag to draw cells. Press <strong>X</strong> to start or stop the simulation.
+    </div>
     <canvas id="game" width="750" height="750"></canvas>
     <script src="game-of-life.js"></script>
 </body>
